@@ -123,8 +123,11 @@ namespace tunman
                 $"-i {privateKeyPath}",
             };
 
+            _logger.LogInformation("Defining {TunnelCount} tunnel(s)", options.Tunnels.Length);
+
             foreach (var tunnel in options.Tunnels)
             {
+                _logger.LogInformation("Tunnel found: {RemotePort} --> {LocalHost}:{LocalPort}", tunnel.RemotePort, tunnel.LocalHost, tunnel.LocalPort);
                 var localHost = tunnel.LocalHost ?? throw new ArgumentNullException(nameof(tunnel), "LocalHost not set on tunnel options");
                 var localPort = tunnel.LocalPort ?? throw new ArgumentNullException(nameof(tunnel), "LocalPort not set on tunnel options");
                 var remotePort = tunnel.RemotePort ?? throw new ArgumentNullException(nameof(tunnel), "RemotePort not set on tunnel options");
