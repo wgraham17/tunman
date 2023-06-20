@@ -15,6 +15,8 @@ Behavior is driven completely by configuration. All fields are required. Multipl
 | `TunMan:Tunnels:N:LocalHost`  | string    | The local (target) host for traffic.
 | `TunMan:Tunnels:N:LocalPort`  | int       | The local (target) port for traffic.
 
+`TunMan:RemoteHostKeys` is an array. Use `TunMan:RemoteHostKeys:0`, `TunMan:RemoteHostKeys:1`, etc.
+
 `TunMan:Tunnels` is an array. Multiple values can be assigned via `N`, e.g. `TunMan:Tunnels:0:RemotePort`, `TunMan:Tunnels:1:RemotePort`, `TunMan:Tunnels:2:RemotePort`.
 
 > If using environment variables for configuration, use double underscore (`__`) instead of `:` per the [.NET documentation on configuration providers](https://learn.microsoft.com/en-us/dotnet/core/extensions/configuration-providers#environment-variable-configuration-provider).
